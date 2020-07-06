@@ -4,3 +4,7 @@ make build:
 
 make serve:
 	poetry run uvicorn pypistats:app --reload
+
+
+make fmt:
+	poetry run black --exclude .venv .

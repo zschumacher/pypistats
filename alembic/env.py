@@ -15,7 +15,9 @@ sys.path.append(BASE_DIR)
 config = context.config
 
 if "DATABASE_URL" not in os.environ:
-    raise ValueError("You must set the DATABASE_URL environment variable in order to use alembic and sqlalchemy")
+    raise ValueError(
+        "You must set the DATABASE_URL environment variable in order to use alembic and sqlalchemy"
+    )
 config.set_main_option("sqlalchemy.url", os.environ["DATABASE_URL"])
 
 fileConfig(config.config_file_name)
@@ -63,9 +65,7 @@ def run_migrations_online():
     )
 
     with connectable.connect() as connection:
-        context.configure(
-            connection=connection, target_metadata=target_metadata
-        )
+        context.configure(connection=connection, target_metadata=target_metadata)
 
         with context.begin_transaction():
             context.run_migrations()
