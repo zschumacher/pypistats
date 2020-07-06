@@ -1,10 +1,14 @@
-make build:
-	# be sure to pip install poetry!
-	poetry install
+build:
+	docker-compose build
 
-make serve:
+up:
+	docker-compose up
+
+serve:
 	poetry run uvicorn pypistats:app --reload
 
-
-make fmt:
+fmt:
 	poetry run black --exclude .venv .
+
+setup:
+	poetry install

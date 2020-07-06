@@ -5,7 +5,13 @@ An application I'm working on with [@crflynn](http://github.com/crflynn) to v2 h
 
 ## Quickstart
 To get the app up and running locally...
-```shell script
-make build
+```bash
+make setup
 make serve
+```
+
+To run it in docker...
+```bash
+make build
+make up
 ```
