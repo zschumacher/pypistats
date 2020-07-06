@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "pypistats"
+version = "0.1.0"
+description = "v2 of pypyistats.org written with fastapi"
+authors = ["Zach Schumacher <zschu15@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+fastapi = "^0.58.1"
+black = "^19.10b0"
+sqlalchemy = "^1.3.18"
+uvicorn = "^0.11.5"
+alembic = "^1.4.2"
+python-dotenv = "^0.14.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
