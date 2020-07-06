@@ -1,0 +1,25 @@
+version: '3.8'
+
+volumes:
+    postgres_data: {}
+
+services:
+  web:
+    build:
+      context: .
+    command: "web"
+    depends_on:
+      - postgres
+    environment:
+      - POSTGRES_HOST=postgres
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+  postgres:
+    image: postgres:12
+    environment:
+      - POSTGRES_USER=pypistats
+      - POSTGRES_PASSWORD=pypistats
+      - POSTGRES_DB=pypistats
+      - POSTGRES_HOST_AUTH_METHOD=trust
