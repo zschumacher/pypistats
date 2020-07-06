@@ -1,10 +1,13 @@
-make build:
+build:
 	# be sure to pip install poetry!
 	poetry install
 
-make serve:
+serve:
 	poetry run uvicorn pypistats:app --reload
 
-
-make fmt:
+fmt:
 	poetry run black --exclude .venv .
+
+setup:
+	asdf install
+	poetry install
